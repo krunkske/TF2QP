@@ -240,6 +240,7 @@ def main_GUI():
     
     play_tab_GUI()
     settings_tab_GUI()
+    custom_config_tab_GUI()
 
 def play_tab_GUI():
     global lbl1
@@ -263,7 +264,7 @@ def play_tab_GUI():
     combo_label = Label(combo_frame, text="Server type:", font=("Arial", 14))
     combo_label.pack(side=LEFT, padx=(0, 10))
 
-    combo = Combobox(combo_frame, state="readonly")
+    combo = Combobox(combo_frame, state="readonly", font=("Arial", 14), width=12)
     combo['values'] = ("Casual", "Uncletopia")
     combo.current(0)  # Set the selected item
     combo.pack(side=LEFT)
@@ -276,7 +277,7 @@ def play_tab_GUI():
     spinbox_label.pack(side=LEFT, padx=(0, 10))
 
     spin_box_value = IntVar(value=1)
-    spin_box = Spinbox(spinbox_frame, from_=1, to=6, wrap=True, width=3, textvariable=spin_box_value, font=("Arial", 14))
+    spin_box = Spinbox(spinbox_frame, from_=1, to=6, wrap=True, width=2, textvariable=spin_box_value, font=("Arial", 14))
     spin_box.pack(side=LEFT)
 
     # Start search button
@@ -332,6 +333,10 @@ def settings_tab_GUI():
     
     savebtn = Button(t2, text="Save", command=save_settings, width=5, style="First.TButton")
     savebtn.pack(side=BOTTOM, pady=10)
+
+def custom_config_tab_GUI():
+    t3 = Frame(notebook)
+    notebook.add(t3, text='Config')
 
 setup()
 main_GUI()
