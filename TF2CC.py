@@ -5,7 +5,7 @@ import json
 import platform
 import subprocess
 import asyncio
-import threading
+
 
 from tkinter import *
 from tkinter.ttk import *
