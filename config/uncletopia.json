@@ -1,0 +1,42 @@
+[
+    {
+        "name": "uncletopia_frk-1",
+        "ip": "frk-1.de.uncletopia.com",
+        "port": 27015
+    },
+    {
+        "name": "uncletopia_frk-2",
+        "ip": "frk-1.de.uncletopia.com",
+        "port": 27025
+    },
+    {
+        "name": "uncletopia_frk-3",
+        "ip": "frk-1.de.uncletopia.com",
+        "port": 27035
+    },
+    {
+        "name": "uncletopia_frk-4",
+        "ip": "frk-1.de.uncletopia.com",
+        "port": 27045
+    },
+    {
+        "name": "uncletopia_frk-5",
+        "ip": "frk-1.de.uncletopia.com",
+        "port": 27055
+    },
+    {
+        "name": "uncletopia_frk-6",
+        "ip": "frk-1.de.uncletopia.com",
+        "port": 27065
+    },
+    {
+        "name": "uncletopia_frk-7",
+        "ip": "frk-1.de.uncletopia.com",
+        "port": 27075
+    },
+    {
+        "name": "uncletopia_frk-8",
+        "ip": "frk-1.de.uncletopia.com",
+        "port": 27085
+    }
+]
