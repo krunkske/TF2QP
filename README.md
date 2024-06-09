@@ -3,6 +3,8 @@
 ## Overview:
 TF2 Community Casual offers a solution to the persistent issues within Valve's official Casual mode, which has been plauged by bots and cheaters for may years, making Casual completly unplayable. This script aims to replace Casual matchmaking to some degree by searching trough verified community servers that closely mimic the vanilla TF2 gameplay experience.
 
+### currently, the amount of verified Vanilla/Uncletopia servers is very limited. I will add more later on. The amount of Casual like servers out there is also very limited and we need more of them.
+
 ## Key Features:
 - Automated Server Selection: The script scans through a curated list of verified community servers that aim to be as vanilla as possible and finds the best match for you and your friends.
 
