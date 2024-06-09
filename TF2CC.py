@@ -77,11 +77,12 @@ def connect(ip, port, name,):
     infotxt(f"Connecting you to {name}")
     
     url = f"steam://connect/{ip}:{port}"
+    print(url)
     if platform.system() == "Windows":
         subprocess.Popen(['start', url], shell=True) #for windows NOT TESTED
     elif platform.system() == "Linux":
         pass
-        #subprocess.Popen(['xdg-open', url], stdout=subprocess.PIPE, stderr=subprocess.PIPE)  # For Linux
+        subprocess.Popen(['xdg-open', url], stdout=subprocess.PIPE, stderr=subprocess.PIPE)  # For Linux
 
 def refresh_server_list():
     available_servers.clear()
