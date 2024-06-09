@@ -8,8 +8,11 @@ TF2 Community Casual offers a solution to the persistent issues within Valve's o
 
 - Customizable Configurations: Whether it's opting for servers with unique mods like Roll the Dice (RTD), servers like Uncletopia or 100 player servers, you choose what you want to play.
 
+![image](https://github.com/krunkske/TF2CC/assets/123201489/ccd25655-ca6c-44ba-8d5b-1d131135bc4b)
+
 ## Why TF2 Community Casual?
 Valve's neglect of the Casual mode has led to widespread frustration among TF2 fans. Although community servers exist, pure vanilla servers can be difficult to find or just non-existent. TF2CC tries to bride this gap.
+
 
 ## Note:
 TF2CC is currently in beta. Certain things might not function as expected. If you have any feedback, want to report an issue or recommend new servers, please do so by opening an issue.
