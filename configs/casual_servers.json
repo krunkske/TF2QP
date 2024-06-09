@@ -1,17 +1,37 @@
 [
     {
-        "name": "skial.com",
-        "ip": "91.216.250.34",
-        "port": 27015
-    },
-    {
-        "name": "Swishcast",
+        "name": "skial_us-1",
         "ip": "91.216.250.40",
         "port": 27015
     },
     {
-        "name": "CServer",
-        "ip": "76.10.86.186",
-        "port":27029
+        "name": "skial_ny-1",
+        "ip": "91.216.250.34",
+        "port": 27015
+    },
+    {
+        "name": "skial_la-1",
+        "ip": "91.216.250.21",
+        "port": 27015
+    },
+    {
+        "name": "Casual.TF_US-2",
+        "ip": "74.91.123.136",
+        "port":27025
+    },
+    {
+        "name": "Casual.TF_us-1",
+        "ip": "74.91.123.136",
+        "port":27035
+    },
+    {
+        "name": "Casual.TF_US-3",
+        "ip": "74.91.123.136",
+        "port":27045
+    },
+    {
+        "name": "Casual.TF_US-4",
+        "ip": "74.91.123.136",
+        "port":27055
     }
 ]

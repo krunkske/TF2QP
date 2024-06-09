@@ -134,15 +134,16 @@ def start_search():
 
     i = 0
     Max_ping = max_ping
+    Capacity = capacity
     while True:
-        Max_ping += i/10
-        capacity[0] -= i
-        capacity[1] += i
+        Max_ping += i/20
+        Capacity[0] -= i
+        Capacity[1] += i
 
         for sv in available_servers:
-            if sv['ping'] <= Max_ping and capacity[0] < sv['players'] < capacity[1]:
+            if sv['ping'] <= Max_ping and Capacity[0] < sv['players'] < Capacity[1]:
                 if not stop:
-                    print(f"FOUND MATCH: {sv['ping']} {Max_ping} {sv['players']} {capacity}")
+                    print(f"FOUND MATCH: {sv['ping']} {Max_ping} {sv['players']} {Capacity}")
                     connect(sv['ip'], sv['port'], sv['name'])
                     searchbtn.config(state=NORMAL)
                     cancelbtn.config(state=DISABLED)
@@ -152,7 +153,7 @@ def start_search():
                     stop = False
                     return False
         i += 1
-        if capacity[0] < 0 and capacity[1] > 24:
+        if Capacity[0] < 0 and Capacity[1] > 24:
             print("could not find a match. retrying in 5 seconds")
             if not stop:
                 root.after(5000, start_search)
