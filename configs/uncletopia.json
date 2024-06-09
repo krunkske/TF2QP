@@ -41,62 +41,62 @@
     },
     {
         "name":"uncletopia_lon-1",
-        "ip": "lon-1.uk.uncletopia.com",
+        "ip": "51.195.189.144",
         "port":27015
     },
     {
         "name":"uncletopia_lon-2",
-        "ip": "lon-1.uk.uncletopia.com",
+        "ip": "51.195.189.144",
         "port":27025
     },
     {
         "name":"uncletopia_lon-3",
-        "ip": "lon-1.uk.uncletopia.com",
+        "ip": "51.195.189.144",
         "port":27035
     },
     {
         "name":"uncletopia_lon-4",
-        "ip": "lon-1.uk.uncletopia.com",
+        "ip": "51.195.189.144",
         "port":27045
     },
     {
         "name":"uncletopia_lon-5",
-        "ip": "lon-1.uk.uncletopia.com",
+        "ip": "51.195.189.144",
         "port":27055
     },
     {
         "name":"uncletopia_lon-6",
-        "ip": "lon-1.uk.uncletopia.com",
+        "ip": "51.195.189.144",
         "port":27065
     },
     {
         "name":"uncletopia_lon-7",
-        "ip": "lon-1.uk.uncletopia.com",
+        "ip": "51.195.189.144",
         "port":27075
     },
     {
         "name":"uncletopia_lon-8",
-        "ip": "lon-1.uk.uncletopia.com",
+        "ip": "51.195.189.144",
         "port":27085
     },
     {
         "name":"nyc-1.us.uncletopia_nyc_us-1",
-        "ip": "nyc-1.us.uncletopia.com",
+        "ip": "74.91.123.17",
         "port":27015
     },
     {
         "name":"nyc-1.us.uncletopia_nyc_us-2",
-        "ip": "nyc-1.us.uncletopia.com",
+        "ip": "74.91.123.17",
         "port":27025
     },
     {
         "name":"nyc-1.us.uncletopia_nyc_us-3",
-        "ip": "nyc-1.us.uncletopia.com",
+        "ip": "74.91.123.17",
         "port":27035
     },
     {
         "name":"nyc-1.us.uncletopia_nyc_us-4",
-        "ip": "nyc-1.us.uncletopia.com",
+        "ip": "74.91.123.17",
         "port":27045
     }
 ]
