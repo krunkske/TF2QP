@@ -4,6 +4,8 @@ import os
 import json
 import platform
 import subprocess
+import asyncio
+import threading
 
 from tkinter import *
 from tkinter.ttk import *
@@ -14,7 +16,7 @@ root = Tk()
 gh_url = "https://raw.githubusercontent.com/krunkske/TF2CC/main/configs/"
 all_configs = ["casual_servers.json", "uncletopia.json"]
 available_servers = []
-max_ping = 0.01
+max_ping = 0.02
 capacity = 2
 
 players = 1
@@ -77,16 +79,16 @@ def connect(ip, port, name,):
     infotxt(f"Connecting you to {name}")
     
     url = f"steam://connect/{ip}:{port}"
-    print(url)
     if platform.system() == "Windows":
         subprocess.Popen(['start', url], shell=True) #for windows NOT TESTED
     elif platform.system() == "Linux":
         pass
         subprocess.Popen(['xdg-open', url], stdout=subprocess.PIPE, stderr=subprocess.PIPE)  # For Linux
 
-def refresh_server_list():
+async def refresh_server_list(content, players):
     available_servers.clear()
-    for sv in content:
+
+    async def get_server_info(sv):
         name = sv["name"]
         ip = sv["ip"]
         port = sv["port"]
@@ -94,7 +96,7 @@ def refresh_server_list():
         print(f"name: {name}\n ip: {ip}")
         
         try:
-            server_info = a2s.info((ip, port), 1)
+            server_info = await asyncio.get_event_loop().run_in_executor(None, lambda: a2s.info((ip, port), 1))
             
             print(server_info.player_count)
             print(server_info.max_players)
@@ -105,6 +107,9 @@ def refresh_server_list():
                 available_servers.append({"ip": ip, "port": port, "name": name, "ping": server_info.ping, "players": server_info.player_count, "max_players": server_info.max_players}) #will be used later
         except Exception as e:
             print(e)
+
+    tasks = [get_server_info(sv) for sv in content]
+    await asyncio.gather(*tasks)
 
 def start_search():
     global content
@@ -131,7 +136,7 @@ def start_search():
     
     players = spin_box_value.get()
     
-    refresh_server_list()
+    asyncio.run(refresh_server_list(content, players))
 
     i = 0
     Max_ping = max_ping
@@ -188,11 +193,11 @@ def save_settings():
     else:
         print("wrong capacity nr")
     
-    settings_json = {"max_ping": settings_max_ping_value.get(), "capacity": cap}
+    settings_json = {"max_ping": settings_max_ping_value.get()/1000, "capacity": cap}
     with open("config/user_config/config.json", "w") as f:
         f.write(json.dumps(settings_json, indent=4))
     
-    max_ping = settings_max_ping_value.get()
+    max_ping = settings_max_ping_value.get()/1000
     capacity = cap
 
     if capacity == 1:
@@ -226,7 +231,7 @@ def main_GUI():
     # Create a notebook
     notebook.pack(expand=True, fill='both')
     
-    infolbl = Label(root, text="Welcome to TF2CC", font=("Arial Bold", 15))
+    infolbl = Label(root, text="Welcome to TF2CC", font=("Arial Bold", 16))
     infolbl.pack(pady=(0, 10))
 
     iplbl = Label(root, text="", font=("Arial Bold", 10))
@@ -248,7 +253,7 @@ def play_tab_GUI():
     notebook.add(t1, text='Play')
     
     # Main title label
-    lbl1 = Label(t1, text="TF2CC", font=("Arial Bold", 30))
+    lbl1 = Label(t1, text="TF2CC", font=("Arial Bold", 30), foreground="brown")
     lbl1.pack(pady=(20, 10))
     
     # Combobox section
@@ -296,7 +301,7 @@ def settings_tab_GUI():
     settings_max_ping_lbl = Label(settings_max_ping_frame, text="Max ping:", font=("Arial", 14))
     settings_max_ping_lbl.pack(side=LEFT, padx=(0, 10))
 
-    settings_max_ping_value= IntVar(value=20)
+    settings_max_ping_value= IntVar(value=max_ping*1000)
     settings_max_ping_nrbox = Spinbox(settings_max_ping_frame, from_=1, to=500, wrap=True, width=6, textvariable=settings_max_ping_value, font=("Arial", 14))
     settings_max_ping_nrbox.pack(side=LEFT)
     
@@ -308,17 +313,25 @@ def settings_tab_GUI():
 
     settings_capacity_combo = Combobox(settings_capacity_frame, state="readonly", font=("Arial", 14), width= 10)
     settings_capacity_combo['values'] = ("0-11", "12-18", "19-24")
-    settings_capacity_combo.current(1)  # Set the selected item
+    
+    if capacity == [0,11]:
+        settings_capacity_combo.current(0)
+    elif capacity == [12, 18]:
+        settings_capacity_combo.current(1)
+    elif capacity == [19, 24]:
+        settings_capacity_combo.current(2)
+    else:
+        print("no correct capacity")
     settings_capacity_combo.pack(side=LEFT)
+    
+    settings_warining_lbl = Label(t2, text="These numbers may not be followed depending\non the amount of available servers", font=("Arial", 11), foreground="gray")
+    settings_warining_lbl.pack(pady=10)
     
     savebtn_style = Style()
     savebtn_style.configure("First.TButton", font=("Arial", 14), foreground="green", background="lightgray")
     
     savebtn = Button(t2, text="Save", command=save_settings, width=5, style="First.TButton")
     savebtn.pack(side=BOTTOM, pady=10)
-    
-    
-    
 
 setup()
 main_GUI()
