@@ -6,11 +6,133 @@ import platform
 import subprocess
 import asyncio
 
-
+import customtkinter
 from tkinter import *
 from tkinter.ttk import *
 
-root = Tk()
+from PIL import Image
+
+class App(customtkinter.CTk):
+    def __init__(self):
+        super().__init__()
+        
+        self.title("TF2CC")
+        self.geometry("700x450")
+
+        # set grid layout 1x2
+        self.grid_rowconfigure(0, weight=1)
+        self.grid_columnconfigure(1, weight=1)
+        
+        #IMAGES
+        image_path = os.path.join(os.path.dirname(os.path.realpath(__file__)), "test_images")
+        self.logo_image = customtkinter.CTkImage(Image.open(os.path.join(image_path, "CustomTkinter_logo_single.png")), size=(26, 26))
+        
+        
+        # SIDEBAR
+        self.navigation_frame = customtkinter.CTkFrame(self, corner_radius=0)
+        self.navigation_frame.grid(row=0, column=0, sticky="nsew")
+        self.navigation_frame.grid_rowconfigure(4, weight=1)
+        
+        #LOGO WILL GO HERE
+        self.logo_frame_label = customtkinter.CTkLabel(self.navigation_frame, text= "TF2CC  ",image=self.logo_image, compound="right", font=customtkinter.CTkFont(size=15, weight="bold"))
+        self.logo_frame_label.grid(row=0, column=0, padx=20, pady=20)
+        
+        #BUTTOS SIDE BAR
+        self.play_button = customtkinter.CTkButton(self.navigation_frame, height=40, border_spacing=10, text="Play",
+                                                    fg_color="transparent", text_color=("gray10", "gray90"), hover_color=("gray70", "gray30"),
+                                                    anchor="s", command=self.play_button_event)
+        self.play_button.grid(row=1, column=0, sticky="ew")
+        
+        self.config_button = customtkinter.CTkButton(self.navigation_frame, height=40, border_spacing=10, text="Config",
+                                                    fg_color="transparent", text_color=("gray10", "gray90"), hover_color=("gray70", "gray30"),
+                                                    anchor="s", command=self.config_button_event)
+        self.config_button.grid(row=2, column=0, sticky="ew")
+        
+        self.settings_button = customtkinter.CTkButton(self.navigation_frame, height=40, border_spacing=10, text="Settings",
+                                                    fg_color="transparent", text_color=("gray10", "gray90"), hover_color=("gray70", "gray30"),
+                                                    anchor="s", command=self.settings_button_event)
+        self.settings_button.grid(row=3, column=0, sticky="ew")
+        
+        self.info_label = customtkinter.CTkLabel(self.navigation_frame, text="Welcome to TF2CC")
+        self.info_label.grid(row=5, column=0, padx=20, pady=20, sticky="s")
+        
+        #doesn't show up yet
+        self.ip_label = customtkinter.CTkLabel(self.navigation_frame, text="test")
+        self.info_label.grid(row=6, column=0, padx=20, pady=20, sticky="s")
+        
+        """ USED TO SWITCH BETWEEN DARK/LIGHT MODE. NOT INPLEMENTED YET
+        self.appearance_mode_menu = customtkinter.CTkOptionMenu(self.navigation_frame, values=["Light", "Dark", "System"],
+                                                                command=self.change_appearance_mode_event)
+        self.appearance_mode_menu.grid(row=6, column=0, padx=20, pady=20, sticky="s")
+        """
+        
+        #CONSTRUCT PLAY PAGE
+        self.play_frame = customtkinter.CTkFrame(self, corner_radius=0, fg_color="transparent")
+        self.play_frame.grid_columnconfigure(0, weight=1)
+        
+        self.server_type_combo = customtkinter.CTkOptionMenu(self.play_frame, values=["Casual", "Uncletopia"], command=self.changed_server_type)
+        self.server_type_combo.grid(row=1, column=0, padx=20, pady=10)
+        
+        self.start_search_button = customtkinter.CTkButton(self.play_frame, text="Start search", command=start_search)
+        self.start_search_button.grid(row=2, column=0, padx=20, pady=10)
+        
+        self.cancel_button = customtkinter.CTkButton(self.play_frame, text="Cancel", command=cancel_search, state=DISABLED)
+        self.cancel_button.grid(row=3, column=0, padx=20, pady=10)
+        
+        #CONSTRUCT CONFIG FRAME
+        self.config_frame = customtkinter.CTkFrame(self, corner_radius=0, fg_color="transparent")
+        self.config_frame.grid_columnconfigure(0, weight=1)
+        
+        #CONSTRUCT SETTINGS FRAME
+        self.settings_frame = customtkinter.CTkFrame(self, corner_radius=0, fg_color="transparent")
+        self.play_frame.grid_columnconfigure(0, weight=1)
+        
+        
+        self.select_frame_by_name("play")
+    
+    def select_frame_by_name(self, name):
+        # set button color for selected button
+        self.play_button.configure(fg_color=("gray75", "gray25") if name == "play" else "transparent")
+        self.config_button.configure(fg_color=("gray75", "gray25") if name == "config" else "transparent")
+        self.settings_button.configure(fg_color=("gray75", "gray25") if name == "settings" else "transparent")
+
+        # show selected frame
+        if name == "play":
+            self.play_frame.grid(row=0, column=1, sticky="nsew")
+        else:
+            self.play_frame.grid_forget()
+        if name == "config":
+            self.config_frame.grid(row=0, column=1, sticky="nsew")
+        else:
+            self.config_frame.grid_forget()
+        if name == "settings":
+            self.settings_frame.grid(row=0, column=1, sticky="nsew")
+        else:
+            self.settings_frame.grid_forget()
+
+    
+    def play_button_event(self):
+        self.select_frame_by_name("play")
+
+    def config_button_event(self):
+        self.select_frame_by_name("config")
+
+    def settings_button_event(self):
+        self.select_frame_by_name("settings")
+    
+    def changed_server_type(self, new_server_type):
+        global content
+        i = 0
+        if new_server_type == "Casual":
+            i = 0
+        elif new_server_type == "Uncletopia":
+            i = 1
+        with open('configs/' + all_configs[i], 'r') as f:
+            content = json.load(f)
+        
+        
+
+
 
 #variables
 gh_url = "https://raw.githubusercontent.com/krunkske/TF2CC/main/configs/"
@@ -67,23 +189,24 @@ def get_config(config_name):
         exit()
 
 def connect(ip, port, name,):
+    global app
     print(f"server found! {name}: {ip}:{port}")
     if players > 1:
-        root.clipboard_clear()
-        root.clipboard_append(f"connect {ip}:{port}")
-        root.update()
+        app.clipboard_clear()
+        app.clipboard_append(f"connect {ip}:{port}")
+        app.update()
         print(f"COOMAND COPIED TO CLIPBOARD")
         iptxt(f"Copied command to clipboard")
     else:
         iptxt(f"{ip}:{port}")
-    infotxt(f"Connecting you to {name}")
+    infotxt(f"Connecting you to \n{name}")
     
     url = f"steam://connect/{ip}:{port}"
     if platform.system() == "Windows":
         subprocess.Popen(['start', url], shell=True) #for windows NOT TESTED
     elif platform.system() == "Linux":
         pass
-        subprocess.Popen(['xdg-open', url], stdout=subprocess.PIPE, stderr=subprocess.PIPE)  # For Linux
+        #subprocess.Popen(['xdg-open', url], stdout=subprocess.PIPE, stderr=subprocess.PIPE)  # For Linux
 
 async def refresh_server_list(content, players):
     available_servers.clear()
@@ -116,25 +239,16 @@ def start_search():
     global players
     global stop
     global searching
+    global app
     if stop:
         stop = False
         return False
     searching = True
-    cancelbtn.config(state=NORMAL)
-    searchbtn.config(state=DISABLED)
+    app.cancel_button.configure(state=NORMAL)
+    app.start_search_button.configure(state=DISABLED)
     infotxt("Searching...")
-
-    type_of_server = combo.get()
-    i = 0
-    if type_of_server == "Casual":
-        i = 0
-    elif type_of_server == "Uncletopia":
-        i = 1
     
-    with open('configs/' + all_configs[i], 'r') as f:
-        content = json.load(f)
-    
-    players = spin_box_value.get()
+    players = 1#spin_box_value.get()
     
     asyncio.run(refresh_server_list(content, players))
 
@@ -151,8 +265,8 @@ def start_search():
                 if not stop:
                     print(f"FOUND MATCH: {sv['ping']} {Max_ping} {sv['players']} {Capacity}")
                     connect(sv['ip'], sv['port'], sv['name'])
-                    searchbtn.config(state=NORMAL)
-                    cancelbtn.config(state=DISABLED)
+                    app.start_search_button.configure(state=NORMAL)
+                    app.cancel_button.configure(state=DISABLED)
                     searching = False
                     return True
                 else:
@@ -162,17 +276,18 @@ def start_search():
         if Capacity[0] < 0 and Capacity[1] > 24:
             print("could not find a match. retrying in 5 seconds")
             if not stop:
-                root.after(5000, start_search)
+                app.after(5000, start_search)
             else:
                 stop = False
             return False
 
 def cancel_search():
+    global app
     global stop
     global searching
     if searching:
-        searchbtn.config(state=NORMAL)
-        cancelbtn.config(state=DISABLED)
+        app.start_search_button.configure(state=NORMAL)
+        app.cancel_button.configure(state=DISABLED)
         infotxt("Cancelled search.")
         print("Cancelled search.")
         stop = True
@@ -208,138 +323,14 @@ def save_settings():
         capacity = [19, 24]
 
 def infotxt(txt):
-    infolbl.config(text=txt)
+    app.info_label.configure(text=txt)
 
 def iptxt(txt):
-    iplbl.config(text=txt)
+    app.ip_label.configure(text=txt)
 
-#UI
-notebook = Notebook(root)
-def main_GUI():
-    global infolbl
-    global iplbl
-    root.geometry("400x600")
-    root.resizable(False, False)
-    root.title("TF2CC")
 
-    # Create a style for ttk widgets
-    style = Style()
-    style.configure("TButton", font=("Arial", 14), padding=10)
-    style.configure("TCombobox", font=("Arial", 14))
-    style.configure("TSpinbox", font=("Arial", 14))
-
-    # Create a notebook
-    notebook.pack(expand=True, fill='both')
-    
-    infolbl = Label(root, text="Welcome to TF2CC", font=("Arial Bold", 16))
-    infolbl.pack(pady=(0, 10))
-
-    iplbl = Label(root, text="", font=("Arial Bold", 10))
-    iplbl.pack(pady=(0, 10))
-    
-    
-    play_tab_GUI()
-    settings_tab_GUI()
-    custom_config_tab_GUI()
-
-def play_tab_GUI():
-    global lbl1
-    global combo
-    global spin_box
-    global spin_box_value
-    global searchbtn
-    global cancelbtn
-    # Create the first tab frame
-    t1 = Frame(notebook)
-    notebook.add(t1, text='Play')
-    
-    # Main title label
-    lbl1 = Label(t1, text="TF2CC", font=("Arial Bold", 30), foreground="brown")
-    lbl1.pack(pady=(20, 10))
-    
-    # Combobox section
-    combo_frame = Frame(t1)
-    combo_frame.pack(pady=(10, 20))
-
-    combo_label = Label(combo_frame, text="Server type:", font=("Arial", 14))
-    combo_label.pack(side=LEFT, padx=(0, 10))
-
-    combo = Combobox(combo_frame, state="readonly", font=("Arial", 14), width=12)
-    combo['values'] = ("Casual", "Uncletopia")
-    combo.current(0)  # Set the selected item
-    combo.pack(side=LEFT)
-
-    # Spinbox section
-    spinbox_frame = Frame(t1)
-    spinbox_frame.pack(pady=(10, 20))
-
-    spinbox_label = Label(spinbox_frame, text="Players in lobby:", font=("Arial", 14))
-    spinbox_label.pack(side=LEFT, padx=(0, 10))
-
-    spin_box_value = IntVar(value=1)
-    spin_box = Spinbox(spinbox_frame, from_=1, to=6, wrap=True, width=2, textvariable=spin_box_value, font=("Arial", 14))
-    spin_box.pack(side=LEFT)
-
-    # Start search button
-    searchbtn = Button(t1, text='Start search', command=start_search)
-    searchbtn.pack(pady=10)
-
-    cancelbtn = Button(t1, text="Cancel", command=cancel_search, width=6, state=DISABLED)
-    cancelbtn.pack(pady=1)
-
-def settings_tab_GUI():
-    global settings_max_ping_value
-    global settings_max_ping_nrbox
-    global settings_capacity_combo
-    
-    # Create the second tab frame
-    t2 = Frame(notebook)
-    notebook.add(t2, text='Settings')
-    
-    settings_max_ping_frame = Frame(t2)
-    settings_max_ping_frame.pack(pady=(10, 20))
-
-    settings_max_ping_lbl = Label(settings_max_ping_frame, text="Max ping:", font=("Arial", 14))
-    settings_max_ping_lbl.pack(side=LEFT, padx=(0, 10))
-
-    settings_max_ping_value= IntVar(value=max_ping*1000)
-    settings_max_ping_nrbox = Spinbox(settings_max_ping_frame, from_=1, to=500, wrap=True, width=6, textvariable=settings_max_ping_value, font=("Arial", 14))
-    settings_max_ping_nrbox.pack(side=LEFT)
-    
-    settings_capacity_frame = Frame(t2)
-    settings_capacity_frame.pack(pady=(0, 0))
-
-    settings_capacity_lbl = Label(settings_capacity_frame, text="Players in server:", font=("Arial", 14))
-    settings_capacity_lbl.pack(side=LEFT, padx=(0, 0))
-
-    settings_capacity_combo = Combobox(settings_capacity_frame, state="readonly", font=("Arial", 14), width= 10)
-    settings_capacity_combo['values'] = ("0-11", "12-18", "19-24")
-    
-    if capacity == [0,11]:
-        settings_capacity_combo.current(0)
-    elif capacity == [12, 18]:
-        settings_capacity_combo.current(1)
-    elif capacity == [19, 24]:
-        settings_capacity_combo.current(2)
-    else:
-        print("no correct capacity")
-    settings_capacity_combo.pack(side=LEFT)
-    
-    settings_warining_lbl = Label(t2, text="These numbers may not be followed depending\non the amount of available servers", font=("Arial", 11), foreground="gray")
-    settings_warining_lbl.pack(pady=10)
-    
-    savebtn_style = Style()
-    savebtn_style.configure("First.TButton", font=("Arial", 14), foreground="green", background="lightgray")
-    
-    savebtn = Button(t2, text="Save", command=save_settings, width=5, style="First.TButton")
-    savebtn.pack(side=BOTTOM, pady=10)
-
-def custom_config_tab_GUI():
-    t3 = Frame(notebook)
-    notebook.add(t3, text='Config')
-
-setup()
-main_GUI()
-
-# Run the Tkinter event loop
-root.mainloop()
+if __name__ == "__main__":
+    app = App()
+    setup()
+    print("Hi")
+    app.mainloop()
