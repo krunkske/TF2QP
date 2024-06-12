@@ -384,8 +384,8 @@ def connect(ip, port, name,):
     if platform.system() == "Windows":
         subprocess.Popen(['start', url], shell=True) #for windows NOT TESTED
     elif platform.system() == "Linux":
-        print("disabled linux connect. If this got into the release build, please contact the developer.")
-        #subprocess.Popen(['xdg-open', url], stdout=subprocess.PIPE, stderr=subprocess.PIPE)  # For Linux
+        #print("disabled linux connect. If this got into the release build, please contact the developer.")
+        subprocess.Popen(['xdg-open', url], stdout=subprocess.PIPE, stderr=subprocess.PIPE)  # For Linux
 
 def start_search():
     global content
