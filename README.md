@@ -31,7 +31,7 @@ These are not needed for the releases. Only for the script on it's own
 - More options for matchmaking (Gamemodes, Maps, Preffered servers...)
 - Blacklist and favorites list
 - Inprovements to the UI
-- If possible, better integration with Steam/Freindslist
+- If possible, better integration with Steam/Friendslist
 
 ## Note:
 TF2CC is currently in beta. Certain things might not function as expected. If you have any feedback, want to report an issue or recommend new servers, please do so by opening an issue.
