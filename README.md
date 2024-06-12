@@ -21,6 +21,7 @@ TF2 Community Casual offers a solution to the persistent issues within Valve's o
 Valve's neglect of the Casual mode has led to widespread frustration among TF2 fans. Although community servers exist, pure vanilla servers can be difficult to find or just non-existent. TF2CC tries to bride this gap by automatically searching for the best match and connecting you to it.
 
 ## Dependencies
+These are not needed for the releases. Only for the script on it's own
 - a2s: https://github.com/Yepoleb/python-a2s
 - requests: https://pypi.org/project/requests/
 - customtkinter: https://customtkinter.tomschimansky.com/
