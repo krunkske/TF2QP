@@ -89,7 +89,7 @@ class App(customtkinter.CTk):
         self.play_label = customtkinter.CTkLabel(self.play_frame, text="Play", font=self.large_font)
         self.play_label.grid(row=0, column=0, padx=20, pady=10)
         
-        self.server_type_combo = customtkinter.CTkOptionMenu(self.play_frame, values=["Casual", "Uncletopia"], width=200, height=30, command=self.changed_server_type, font=self.button_font)
+        self.server_type_combo = customtkinter.CTkOptionMenu(self.play_frame, values=["Casual", "Uncletopia", "RTD"], width=200, height=30, command=self.changed_server_type, font=self.button_font)
         self.server_type_combo.grid(row=1, column=0, padx=20, pady=10)
         
         self.amount_of_players_frame = customtkinter.CTkFrame(self.play_frame, corner_radius=0, fg_color="transparent")
@@ -135,7 +135,7 @@ class App(customtkinter.CTk):
         self.player_count_label = customtkinter.CTkLabel(self.player_count_frame, text="Amount of players", font=self.label_font)
         self.player_count_label.grid(row=0, column=0, padx=0, pady=0)
         
-        self.player_count_combo = customtkinter.CTkOptionMenu(self.player_count_frame, values=["0-11", "12-18", "19-24"], command=self.changed_player_count, font=self.button_font)
+        self.player_count_combo = customtkinter.CTkOptionMenu(self.player_count_frame, values=["0-11", "12-18", "19-24", "24-100"], command=self.changed_player_count, font=self.button_font)
         if capacity == [0, 11]:
             self.player_count_combo.set("0-11")
         elif capacity == [12, 18]:
@@ -222,6 +222,8 @@ class App(customtkinter.CTk):
             i = 0
         elif new_server_type == "Uncletopia":
             i = 1
+        elif new_server_type == "RTD":
+            i = 2
         
         with open('config/' + all_configs[i], 'r') as f:
             content = json.load(f)
@@ -234,6 +236,8 @@ class App(customtkinter.CTk):
             capacity = [12, 18]
         elif new_player_count == "19-24":
             capacity = [19, 24]
+        elif new_player_count == "24-100":
+            capacity = [24,100]
         else:
             print("wrong capacity")
         
@@ -259,7 +263,7 @@ class App(customtkinter.CTk):
 
 #variables
 gh_url = "https://raw.githubusercontent.com/krunkske/TF2CC/main/configs/"
-all_configs = ["casual_servers.json", "uncletopia.json"]
+all_configs = ["casual_servers.json", "uncletopia.json", "rtd.json"]
 available_servers = []
 max_ping = 0.05
 capacity = 2
@@ -307,6 +311,8 @@ def setup():
         capacity = [12, 18]
     elif capacity == 3:
         capacity = [19, 24]
+    elif capacity == 4:
+        capacity = [24, 100]
     
 
     for i in all_configs:
@@ -332,6 +338,8 @@ def save_settings():
         cap = 2
     elif capacity == [19, 24]:
         cap = 3
+    elif capacity == [24, 100]:
+        cap = 4
     
     
     settings_json = {"max_ping": max_ping, "capacity": cap}
@@ -434,7 +442,7 @@ def start_search():
                     print(f"Something else: {int(sv['ping']*1000)} {int(Max_ping*1000)} {sv['players']} {Capacity} : {sv["name"]}")
                 
         i += 1
-        if Capacity[0] < 0 and Capacity[1] > 24:
+        if Capacity[0] < 0 and Capacity[1] > 24 or Capacity[0] < 0 and not Capacity[1] >= 100:
             print("could not find a match. retrying in 5 seconds")
             if not stop:
                 app.after(5000, start_search)
