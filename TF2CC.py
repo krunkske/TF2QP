@@ -237,7 +237,7 @@ class App(customtkinter.CTk):
         elif new_player_count == "19-24":
             capacity = [19, 24]
         elif new_player_count == "24-100":
-            capacity = [24,100]
+            capacity = [24, 100]
         else:
             print("wrong capacity")
         
