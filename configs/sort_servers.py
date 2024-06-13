@@ -4,10 +4,10 @@ servers = []
 unsorted_list_ip = []
 unsorted_list_name = []
 
-with open('casual_unsorted_ip.txt', 'r') as f:
+with open('configs/casual_unsorted_ip.txt', 'r') as f:
     unsorted_list_ip = f.read().split('\n')
 
-with open('casual_unsorted_name.txt', 'r') as f:
+with open('configs/casual_unsorted_name.txt', 'r') as f:
     unsorted_list_name = f.read().split('\n')
 
 for i in range(len(unsorted_list_ip)):
@@ -16,8 +16,8 @@ for i in range(len(unsorted_list_ip)):
     port = ip_and_port[1]
     name = unsorted_list_name[i]
     
-    servers.append({"name": name, "ip": ip, "port": port})
+    servers.append({"name": name, "ip": ip, "port": int(port)})
     
-with open('casual_servers.json', 'a') as f:
+with open('configs/casual_servers.json', 'a') as f:
     f.write(json.dumps(servers, indent=4))
     

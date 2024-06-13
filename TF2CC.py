@@ -359,7 +359,7 @@ async def refresh_server_list(content, players):
         print(f"name: {name} ip: {ip}")
         
         try:
-            server_info = await a2s.ainfo((ip, port), 1)
+            server_info = await a2s.info((ip, port), 1.0)
             #print(server_info.player_count)
             #print(server_info.max_players)
             #print(server_info.ping)
@@ -370,7 +370,9 @@ async def refresh_server_list(content, players):
             else:
                 print(f"not enough spots: {server_info.player_count} poulated, {players} players")
         except Exception as e:
+            print("START EXCEPTION")
             print(e)
+            print("EXCEPTION OCCURED IN REFRESH SERVER LIST")
 
     tasks = [get_server_info(sv) for sv in content]
     await asyncio.gather(*tasks)
@@ -392,8 +394,8 @@ def connect(ip, port, name,):
     if platform.system() == "Windows":
         subprocess.Popen(['start', url], shell=True) #for windows NOT TESTED
     elif platform.system() == "Linux":
-        #print("disabled linux connect. If this got into the release build, please contact the developer.")
-        subprocess.Popen(['xdg-open', url], stdout=subprocess.PIPE, stderr=subprocess.PIPE)  # For Linux
+        print("disabled linux connect. If this got into the release build, please contact the developer.")
+        #subprocess.Popen(['xdg-open', url], stdout=subprocess.PIPE, stderr=subprocess.PIPE)  # For Linux
 
 def start_search():
     global content
