@@ -70,7 +70,7 @@ class App(customtkinter.CTk):
                                                     anchor="s", command=self.info_button_event, font=self.title_font)
         self.info_button.grid(row=4, column=0, sticky="s")
         
-        self.info_label = customtkinter.CTkLabel(self.navigation_frame, text="Welcome to TF2CC", font=self.label_font)
+        self.info_label = customtkinter.CTkLabel(self.navigation_frame, text="Welcome to TF2CC", font=self.label_font, wraplength=150)
         self.info_label.grid(row=5, column=0, padx=10, pady=5, sticky="s")
         
         self.ip_label = customtkinter.CTkLabel(self.navigation_frame, text="", font=self.small_label_font)
@@ -359,7 +359,8 @@ async def refresh_server_list(content, players):
         print(f"name: {name} ip: {ip}")
         
         try:
-            server_info = await a2s.info((ip, port), 1.0)
+            server_info = await a2s.ainfo((ip, port), 1.0) #ainfo (instead of info) introduces a noticable amount of extra ping, Dunno how or if I will ever fix it so it will be a bit unreliable for now
+            #Increase maximum ping to negate this issue
             #print(server_info.player_count)
             #print(server_info.max_players)
             #print(server_info.ping)
@@ -416,6 +417,7 @@ def start_search():
     i = 0
     Max_ping = max_ping
     Capacity = capacity
+    print("\nSTART SORTING\n")
     while True:
         #Max_ping += i/20 #will put you in servers with with a way too high ping
         Capacity[0] -= i
