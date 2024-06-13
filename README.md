@@ -1,7 +1,7 @@
-# TF2 Community Casual
+# TF2 Quick Play
 ## A program designed to seamlessly connect players to vanilla-like community servers, serving as an alternative to Valve's Casual mode.
 ## Overview:
-TF2 Community Casual offers a solution to the persistent issues within Valve's official Casual mode, which has been plauged by bots and cheaters for may years, making Casual completly unplayable. This program aims to replace Casual matchmaking as best as possible by searching trough verified community servers that closely mimic the vanilla TF2 gameplay.
+TF2 Quick Play offers a solution to the persistent issues within Valve's official Casual mode, which has been plauged by bots and cheaters for may years, making Casual completly unplayable. This program aims to replace Casual matchmaking as best as possible by searching trough verified community servers that closely mimic the vanilla TF2 gameplay.
 
 ### currently, the amount of Casual servers is very limited. If you own a TF2 server that focusses to be a Casual/vanilla experience, please open an Issue.
 
@@ -17,7 +17,7 @@ TF2 Community Casual offers a solution to the persistent issues within Valve's o
 ## Screenshots
 ![image](https://github.com/krunkske/TF2CC/assets/123201489/cbf7cf67-2a36-4f94-a81a-d029f34958dd)
 
-## Why TF2 Community Casual?
+## Why TF2QP?
 Valve's neglect of the Casual mode has led to widespread frustration among TF2 fans. Although community servers exist, pure vanilla servers can be difficult to find or just non-existent. TF2CC tries to bride this gap by automatically searching for the best match and connecting you to it.
 
 ## Dependencies
@@ -34,5 +34,5 @@ These are not needed for the releases. Only for the script on it's own
 - If possible, better integration with Steam/Friendslist
 
 ## Note:
-TF2CC is currently in beta. Certain things might not function as expected. If you have any feedback, want to report an issue or recommend new servers, please do so by opening an issue.
+TF2QP is currently in beta. Certain things might not function as expected. If you have any feedback, want to report an issue or recommend new servers, please do so by opening an issue.
 
