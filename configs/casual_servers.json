@@ -1,567 +1,680 @@
 [
     {
+        "name": "skial.com | CASUAL | LA 1",
+        "region": "usa",
+        "ip": "91.216.250.21",
+        "port": 27015
+    },
+    {
         "name": "ProTF2.com | Casual | Los Angeles",
+        "region": "usa",
         "ip": "162.248.93.109",
         "port": 27015
     },
     {
         "name": "TF2 GAMING #SaveTF2 #FixTF2 - CASUAL - rtv crits on",
+        "region": "usa",
         "ip": "204.152.220.42",
         "port": 7100
     },
     {
         "name": "The Degen Den (Dragulas Castle)",
+        "region": "usa",
         "ip": "204.152.220.162",
         "port": 7005
     },
     {
         "name": "Vanilla TF2 USWest | castaway.tf",
+        "region": "usa",
         "ip": "172.233.141.160",
         "port": 27015
     },
     {
         "name": "REDchanit.xyz | TF2 Vanilla",
+        "region": "usa",
         "ip": "97.94.129.234",
         "port": 27664
     },
     {
         "name": "Casualtopia | Seattle | UT with random crits and no limits",
+        "region": "usa",
         "ip": "71.212.94.243",
         "port": 27019
     },
     {
         "name": "Furrball TF2 [US 1]",
+        "region": "usa",
         "ip": "174.138.175.106",
         "port": 27185
     },
     {
         "name": "cat caf\u00e9 | nospread, crits, alltalk | 18+",
+        "region": "usa",
         "ip": "74.91.114.119",
         "port": 27015
     },
     {
         "name": "SMIZZ [US EAST 1] Vanilla | Improved TFBots | Custom Maps",
+        "region": "usa",
         "ip": "209.192.176.10",
         "port": 27015
     },
     {
         "name": "Ven\u00e4l\u00e4inen's custom casual server Dallas",
+        "region": "usa",
         "ip": "104.223.101.28",
         "port": 27015
     },
     {
         "name": "[VL] The Villains Lounge | Casual Hell Rest Area",
+        "region": "usa",
         "ip": "192.169.81.58",
         "port": 19011
     },
     {
+        "name": "skial.com | CASUAL | US 1",
+        "region": "usa",
+        "ip": "91.216.250.40",
+        "port": 27015
+    },
+    {
         "name": "\u2588\u2502\u2732\u22ee pyroville | CASUAL EXPANDED MAP POOL",
+        "region": "usa",
         "ip": "74.91.114.211",
         "port": 27040
     },
     {
         "name": "FEDFortress (US-West Dallas)",
+        "region": "usa",
         "ip": "172.240.90.229",
         "port": 27015
     },
     {
         "name": "FEDFortress 2 (US-West Dallas)",
+        "region": "usa",
         "ip": "192.169.81.178",
         "port": 19001
     },
     {
         "name": "HMNetworks #2 Casual | Dallas",
+        "region": "usa",
         "ip": "74.91.120.9",
         "port": 27015
     },
     {
         "name": "Cafe of Broken Dreams",
+        "region": "usa",
         "ip": "66.150.214.212",
         "port": 27015
     },
     {
         "name": "Vanilla TF2 USCentral | castaway.tf",
+        "region": "usa",
         "ip": "96.126.126.174",
         "port": 27015
     },
     {
         "name": "\u2588 \u25ba blw.tf US | CASUAL VANILLA | NO CRITS \u25c4 \u2588",
+        "region": "usa",
         "ip": "85.117.240.15",
         "port": 27025
     },
     {
         "name": "Cserver-Casual",
+        "region": "usa",
         "ip": "127.0.1.1",
         "port": 27029
     },
     {
         "name": "matchaland.net | TF2 Standard Maps",
+        "region": "usa",
         "ip": "64.5.76.253",
         "port": 27015
     },
     {
         "name": "ToastyJakey's Server",
+        "region": "usa",
         "ip": "173.240.145.198",
         "port": 7020
     },
     {
         "name": "community.TF | CASUAL+ | All Maps | Chicago",
+        "region": "usa",
         "ip": "79.127.234.193",
         "port": 22847
     },
     {
         "name": "RogueFortress | Chicago | Payload and KOTH",
+        "region": "usa",
         "ip": "103.89.14.186",
         "port": 27015
     },
     {
         "name": "Spectre\u2019s Casual+ Server | Chicago",
+        "region": "usa",
         "ip": "172.233.217.234",
         "port": 27015
     },
     {
         "name": "tiny kitty's girl pound #4 = [nospread crits rtv good maps] 18+",
+        "region": "usa",
         "ip": "74.91.115.12",
         "port": 27015
     },
     {
         "name": "tiny kitty's girl pound #5 = [nospread crits rtv good maps] 18+",
+        "region": "usa",
         "ip": "74.91.113.115",
         "port": 27015
     },
     {
         "name": "/ / OPRAH'S P E T R O L | STATION / / - HYBRID",
+        "region": "usa",
         "ip": "108.181.63.51",
         "port": 27016
     },
     {
         "name": "TF2 Community [NA/Chicago] | discord.gg.tf2",
+        "region": "usa",
         "ip": "144.202.53.58",
         "port": 27015
     },
     {
         "name": "MicSnobs / Vote Rotation",
+        "region": "usa",
         "ip": "69.197.188.114",
         "port": 27017
     },
     {
         "name": "JUSTPLAY | COMPETITIVE ROTATION",
+        "region": "usa",
         "ip": "198.12.124.222",
         "port": 27030
     },
     {
         "name": "PG | CASUAL | NO SPREAD | CRITS | NO ADS",
+        "region": "usa",
         "ip": "205.178.182.182",
         "port": 27135
     },
     {
         "name": "Community but Casual",
+        "region": "usa",
         "ip": "79.127.206.86",
         "port": 22303
     },
     {
+        "name": "skial.com | CASUAL | NY 1",
+        "region": "usa",
+        "ip": "91.216.250.34",
+        "port": 27015
+    },
+    {
         "name": "Moon's CASUAL|New York",
+        "region": "usa",
         "ip": "104.131.0.245",
         "port": 27015
     },
     {
         "name": "ashley's cool server | New York",
+        "region": "usa",
         "ip": "137.184.22.97",
         "port": 27015
     },
     {
         "name": "Vanilla TF2 USEast | castaway,tf",
+        "region": "usa",
         "ip": "45.79.181.77",
         "port": 27015
     },
     {
         "name": "[US] tabs.place \u2013 Casual",
+        "region": "usa",
         "ip": "5.161.54.52",
         "port": 27017
     },
     {
         "name": "Tim\u2019s Vanilla Casual | DAILY GIVEAWAYS!",
+        "region": "usa",
         "ip": "5.161.196.91",
         "port": 27015
     },
     {
         "name": "Furry Trash | US-East | x64 | +18",
+        "region": "usa",
         "ip": "100.0.5.174",
         "port": 27015
     },
     {
         "name": "Big Bang Gamers | Casual",
+        "region": "usa",
         "ip": "136.54.78.222",
         "port": 27017
     },
     {
         "name": "Spectre\u2019s Casual+ Server #2",
+        "region": "usa",
         "ip": "170.187.157.95",
         "port": 27015
     },
     {
         "name": "Zesty Vanilla Server | Atlanta",
+        "region": "usa",
         "ip": "74.91.121.14",
         "port": 27015
     },
     {
         "name": "Bug House TF2",
+        "region": "usa",
         "ip": "216.96.77.175",
         "port": 27035
     },
     {
         "name": "P2X TF2 Rotate Server. Recruiting Players/Free Admin.",
+        "region": "usa",
         "ip": "38.18.110.180",
         "port": 27019
     },
     {
         "name": "The Furry Pound #4 - Stock Maps Only",
+        "region": "usa",
         "ip": "192.99.19.228",
         "port": 27015
     },
     {
         "name": "The Furry Pound #5 - No Crits, Custom & Stock Maps",
+        "region": "usa",
         "ip": "192.99.19.228",
         "port": 27016
     },
     {
         "name": "Electric Servers [#2] Argentina || Casual Alternative",
+        "region": "sa",
         "ip": "45.235.99.105",
         "port": 27038
     },
     {
         "name": "LazyBane's Server",
+        "region": "eu",
         "ip": "104.248.166.32",
         "port": 27015
     },
     {
         "name": "THG | Vanilla Fun Server |EU| Triggerhappygamers.com",
+        "region": "eu",
         "ip": "87.98.254.85",
         "port": 27015
     },
     {
         "name": "THG | Teamwork Nocrits |EU| Triggerhappygamers.com",
+        "region": "eu",
         "ip": "87.98.254.85",
         "port": 27025
     },
     {
         "name": "THG | Vanilla Too Much Fun Server |EU| Triggerhappygamers.com",
+        "region": "eu",
         "ip": "87.98.254.85",
         "port": 27035
     },
     {
         "name": "SameTeem - TF2 #1 - Public - HLStatX",
+        "region": "eu",
         "ip": "51.38.89.183",
         "port": 27015
     },
     {
         "name": "OshieMania | UK | Vanilla Team Fortress 2",
+        "region": "eu",
         "ip": "51.89.222.127",
         "port": 7000
     },
     {
         "name": "BreachLAN Public TF2",
+        "region": "eu",
         "ip": "79.127.236.191",
         "port": 27015
     },
     {
         "name": "The Dragon Inn TF2",
+        "region": "eu",
         "ip": "51.68.204.237",
         "port": 27004
     },
     {
         "name": "SameTeem : ts.sameteem.com",
+        "region": "eu",
         "ip": "164.132.161.231",
         "port": 27017
     },
     {
         "name": "[Classic] ArmaLand - Chill and fun!",
+        "region": "eu",
         "ip": "62.34.254.152",
         "port": 27015
     },
     {
         "name": "RUGC Europe | no-crit/no-spread | vanilla",
+        "region": "eu",
         "ip": "51.178.68.211",
         "port": 19001
     },
     {
         "name": "LGA | Falkenstein | 1 | All Maps",
+        "region": "eu",
         "ip": "144.76.70.89",
         "port": 27045
     },
     {
         "name": "mixxed.xyz | Germany 1 | All Maps",
+        "region": "eu",
         "ip": "78.31.71.56",
         "port": 30001
     },
     {
         "name": "mixxed.xyz | Germany 2 | All Maps",
+        "region": "eu",
         "ip": "78.31.71.56",
         "port": 30002
     },
     {
         "name": "mixxed.xyz | Germany 3 | All Maps",
+        "region": "eu",
         "ip": "78.31.71.56",
         "port": 30003
     },
     {
         "name": "mixxed.xyz | Germany 4 | All Maps",
+        "region": "eu",
         "ip": "78.31.71.56",
         "port": 30004
     },
     {
         "name": "mixxed.xyz | Germany 5 | All Maps",
+        "region": "eu",
         "ip": "78.31.71.56",
         "port": 30005
     },
     {
         "name": "mixxed.xyz | Germany 6 | All Maps",
+        "region": "eu",
         "ip": "78.31.71.56",
         "port": 30006
     },
     {
         "name": "mixxed.xyz | Germany 7 | All Maps",
+        "region": "eu",
         "ip": "78.31.71.56",
         "port": 30007
     },
     {
         "name": "mixxed.xyz | Germany 8 | All Maps",
+        "region": "eu",
         "ip": "78.31.71.56",
         "port": 30008
     },
     {
         "name": "mixxed.xyz | Germany 9 | All Maps",
+        "region": "eu",
         "ip": "78.31.71.56",
         "port": 30009
     },
     {
         "name": "Spenny.TF | Casual",
+        "region": "eu",
         "ip": "88.198.49.46",
         "port": 27045
     },
     {
         "name": "[TEA] TF2 casual #1",
+        "region": "eu",
         "ip": "116.202.172.94",
         "port": 27016
     },
     {
         "name": "[EU] Casual Paradise",
+        "region": "eu",
         "ip": "88.198.55.211",
         "port": 27025
     },
     {
         "name": "[EU] Swishcast Central [Casual]",
+        "region": "eu",
         "ip": "57.129.13.51",
         "port": 27015
     },
     {
         "name": "bitboytopia | Vanilla  Custom maps | Frankfurt",
+        "region": "eu",
         "ip": "167.99.243.146",
         "port": 27015
     },
     {
         "name": "\u2588 \u25ba blw.tf | CASUAL VANILLA | NO CRITS \u25c4 \u2588",
+        "region": "eu",
         "ip": "157.90.177.48",
         "port": 27210
     },
     {
         "name": "[\u0164\u03a9K'R\u03bb] Team Fortress 2 Server",
+        "region": "eu",
         "ip": "193.122.1.213",
         "port": 27015
     },
     {
         "name": "FUN Server #1 | RTD | Vanilla Maps | Everyone Welcome!",
+        "region": "eu",
         "ip": "134.255.227.124",
         "port": 27015
     },
     {
         "name": "PWNFortress [Warsaw #2]",
+        "region": "eu",
         "ip": "34.118.109.219",
         "port": 27015
     },
     {
         "name": "MTRN.HU | CASUAL | EU",
+        "region": "eu",
         "ip": "213.181.206.159",
         "port": 27073
     },
     {
         "name": "A normal TF2 server",
+        "region": "eu",
         "ip": "5.12.255.211",
         "port": 27015
     },
     {
         "name": "The Dragon's Cave | 18+ EU Furry Server",
+        "region": "eu",
         "ip": "88.192.133.24",
         "port": 27015
     },
     {
         "name": "TestoTown | Helsinki | Community Maps | 24/7",
+        "region": "eu",
         "ip": "65.21.189.168",
         "port": 27015
     },
     {
         "name": "[ID] Culture Academy Indonesia - Casual Server [Powered by Ulti",
+        "region": "asia",
         "ip": "103.150.116.197",
         "port": 27015
     },
     {
         "name": "Free DV Server | Classic",
+        "region": "asia",
         "ip": "87.225.90.99",
         "port": 27016
     },
     {
         "name": "TF2SA Pub (RTV)",
+        "region": "africa",
         "ip": "129.151.163.124",
         "port": 27015
     },
     {
         "name": "Ender's Dead Ringer Community Server | AUS",
+        "region": "aus",
         "ip": "162.33.18.241",
         "port": 26990
     },
     {
         "name": "Vanilla TF2 AUS | castaway.tf",
+        "region": "aus",
         "ip": "45.79.118.151",
         "port": 27015
     },
     {
         "name": "ProTF2.com | Payload | Los Angeles",
+        "region": "usa",
         "ip": "162.248.93.166",
         "port": 27015
     },
     {
         "name": "Laila Infinity's Payload Pub",
+        "region": "usa",
         "ip": "8.42.79.167",
         "port": 27015
     },
     {
         "name": "Laila Infinity's CTF/Hightower Pub",
+        "region": "usa",
         "ip": "8.42.79.167",
         "port": 27017
     },
     {
         "name": "Laila Infinity's Control Point Pub",
+        "region": "usa",
         "ip": "8.42.79.167",
         "port": 27016
     },
     {
         "name": "Laila Infinity's Misc Maps Pub",
+        "region": "usa",
         "ip": "8.42.79.167",
         "port": 27018
     },
     {
         "name": "ProTF2.com | Payload | Chicago",
+        "region": "usa",
         "ip": "74.91.122.216",
         "port": 27015
     },
     {
         "name": "itsalivegaming.net 24/7 Payload",
+        "region": "usa",
         "ip": "74.91.115.97",
         "port": 27015
     },
     {
         "name": "RogueFortress | Chicago | Payload and KOTH",
+        "region": "usa",
         "ip": "103.89.14.186",
         "port": 27015
     },
     {
         "name": "/ / OPRAH'S | P E T R O L | STATION / / - PAYLOAD",
+        "region": "usa",
         "ip": "108.181.63.51",
         "port": 27015
     },
     {
         "name": "VanillaTF2 | Stress Test | ASH #001",
+        "region": "usa",
         "ip": "5.161.114.235",
         "port": 27015
     },
     {
         "name": "VanillaTF2 | Stress Test | ASH #002",
+        "region": "usa",
         "ip": "5.161.114.235",
         "port": 27016
     },
     {
         "name": "[EN/GB] Team Fortress 2 | 24/7 Attack/Defend | austino.net",
+        "region": "eu",
         "ip": "188.74.70.53",
         "port": 27047
     },
     {
         "name": "[EN/GB] Team Fortress 2 | 24/7 Control Point | austino.net",
+        "region": "eu",
         "ip": "188.74.70.53",
         "port": 27046
     },
     {
         "name": "[EN/GB] Team Fortress 2 | 24/7 King of the Hill | austino.net",
+        "region": "eu",
         "ip": "188.74.70.53",
         "port": 27048
     },
     {
         "name": "[EN/GB] Team Fortress 2 | 24/7 Payload | austino.net",
+        "region": "eu",
         "ip": "188.74.70.53",
         "port": 27049
     },
     {
         "name": "Alki's Payload Refuge",
+        "region": "eu",
         "ip": "188.42.37.68",
         "port": 16100
     },
     {
         "name": "Team Fortress 2 | Control Point | diditec.net",
+        "region": "eu",
         "ip": "146.190.205.130",
         "port": 27016
     },
     {
         "name": "Team Fortress 2 | King of the Hill | diditec.net",
+        "region": "eu",
         "ip": "146.190.205.130",
         "port": 27018
     },
     {
         "name": "Team Fortress 2 | King of the Hill | diditec.net",
+        "region": "eu",
         "ip": "146.190.205.130",
         "port": 27022
     },
     {
         "name": "Team Fortress 2 | CTF | diditec.net",
+        "region": "eu",
         "ip": "146.190.205.130",
         "port": 27019
     },
     {
         "name": "Team Fortress 2 | CTF | diditec.net",
+        "region": "eu",
         "ip": "146.190.205.130",
         "port": 27020
     },
     {
         "name": "Team Fortress 2 | PLR | diditec.net",
+        "region": "eu",
         "ip": "146.190.205.130",
         "port": 27021
     },
     {
         "name": "Team Fortress 2 | Payload | diditec.net",
+        "region": "eu",
         "ip": "146.190.205.130",
         "port": 27024
     },
     {
         "name": "arctic.tf/5CP",
+        "region": "eu",
         "ip": "65.21.148.75",
         "port": 27020
     },
     {
         "name": "LMAO - 24/7 Payload",
+        "region": "usa",
         "ip": "74.91.115.92",
-        "port": 27015
-    },
-    {
-        "name": "skial.com | CASUAL | LA 1",
-        "ip": "91.216.250.21",
-        "port": 27015
-    },
-    {
-        "name": "skial.com | CASUAL | US 1",
-        "ip": "91.216.250.40",
-        "port": 27015
-    },
-    {
-        "name": "skial.com | CASUAL | NY 1",
-        "ip": "91.216.250.34",
         "port": 27015
     }
 ]
