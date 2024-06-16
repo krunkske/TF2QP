@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://sf136emu2beb"]
+
+[ext_resource type="Theme" uid="uid://btf0i7w0o2el7" path="res://assets/themes/dark_theme.tres" id="1_17uwv"]
+[ext_resource type="Script" path="res://scripts/gui/about_page.gd" id="1_x8avx"]
+
+[node name="about_page" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -150.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_17uwv")
+script = ExtResource("1_x8avx")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

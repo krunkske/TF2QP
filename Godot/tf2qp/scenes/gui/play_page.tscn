@@ -1,0 +1,71 @@
+[gd_scene load_steps=3 format=3 uid="uid://c7fkkwero8khj"]
+
+[ext_resource type="Script" path="res://scripts/gui/play_page.gd" id="1_7nvvh"]
+[ext_resource type="Theme" uid="uid://btf0i7w0o2el7" path="res://assets/themes/dark_theme.tres" id="2_tjwc4"]
+
+[node name="play_page" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -150.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+script = ExtResource("1_7nvvh")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_tjwc4")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -100.0
+offset_right = 100.0
+offset_bottom = 150.0
+grow_horizontal = 2
+
+[node name="HSeparator" type="HSeparator" parent="Panel/VBoxContainer"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="play_lbl" type="RichTextLabel" parent="Panel/VBoxContainer"]
+layout_mode = 2
+bbcode_enabled = true
+text = "[center][b]Play[/b][/center]"
+fit_content = true
+
+[node name="HSeparator2" type="HSeparator" parent="Panel/VBoxContainer"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="OptionButton" type="OptionButton" parent="Panel/VBoxContainer"]
+layout_mode = 2
+selected = 0
+item_count = 3
+popup/item_0/text = "Casual"
+popup/item_1/text = "Uncletopia"
+popup/item_1/id = 1
+popup/item_2/text = "RTD"
+popup/item_2/id = 2
+
+[node name="HSlider" type="HSlider" parent="Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="start" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+text = "Start Search
+"
+
+[connection signal="item_selected" from="Panel/VBoxContainer/OptionButton" to="." method="_on_option_button_item_selected"]
+[connection signal="pressed" from="Panel/VBoxContainer/start" to="." method="_on_start_pressed"]

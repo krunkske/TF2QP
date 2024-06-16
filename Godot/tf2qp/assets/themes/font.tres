@@ -1,0 +1,7 @@
+[gd_resource type="SystemFont" format=3 uid="uid://b8ypobp7vc786"]
+
+[resource]
+font_names = PackedStringArray("Open Sans")
+font_weight = 600
+hinting = 2
+multichannel_signed_distance_field = true

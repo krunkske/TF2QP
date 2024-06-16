@@ -1,251 +1,301 @@
 [
     {
         "name": "uncletopia_frk-1",
+        "region": "eu",
         "ip": "135.125.189.220",
         "port": 27015
     },
     {
         "name": "uncletopia_frk-2",
+        "region": "eu",
         "ip": "135.125.189.220",
         "port": 27025
     },
     {
         "name": "uncletopia_frk-3",
+        "region": "eu",
         "ip": "135.125.189.220",
         "port": 27035
     },
     {
         "name": "uncletopia_frk-4",
+        "region": "eu",
         "ip": "135.125.189.220",
         "port": 27045
     },
     {
         "name": "uncletopia_frk-5",
+        "region": "eu",
         "ip": "135.125.189.220",
         "port": 27055
     },
     {
         "name": "uncletopia_frk-6",
+        "region": "eu",
         "ip": "135.125.189.220",
         "port": 27065
     },
     {
         "name": "uncletopia_frk-7",
+        "region": "eu",
         "ip": "135.125.189.220",
         "port": 27075
     },
     {
         "name": "uncletopia_frk-8",
+        "region": "eu",
         "ip": "135.125.189.220",
         "port": 27085
     },
     {
         "name":"uncletopia_lon-1",
+        "region": "eu",
         "ip": "51.195.189.144",
         "port":27015
     },
     {
         "name":"uncletopia_lon-2",
+        "region": "eu",
         "ip": "51.195.189.144",
         "port":27025
     },
     {
         "name":"uncletopia_lon-3",
+        "region": "eu",
         "ip": "51.195.189.144",
         "port":27035
     },
     {
         "name":"uncletopia_lon-4",
+        "region": "eu",
         "ip": "51.195.189.144",
         "port":27045
     },
     {
         "name":"uncletopia_lon-5",
+        "region": "eu",
         "ip": "51.195.189.144",
         "port":27055
     },
     {
         "name":"uncletopia_lon-6",
+        "region": "eu",
         "ip": "51.195.189.144",
         "port":27065
     },
     {
         "name":"uncletopia_lon-7",
+        "region": "eu",
         "ip": "51.195.189.144",
         "port":27075
     },
     {
         "name":"uncletopia_lon-8",
+        "region": "eu",
         "ip": "51.195.189.144",
         "port":27085
     },
     {
         "name":"uncletopia_nyc_us-1",
+        "region": "usa",
         "ip": "74.91.123.17",
         "port":27015
     },
     {
         "name":"uncletopia_nyc_us-2",
+        "region": "usa",
         "ip": "74.91.123.17",
         "port":27025
     },
     {
         "name":"uncletopia_nyc_us-3",
+        "region": "usa",
         "ip": "74.91.123.17",
         "port":27035
     },
     {
         "name":"uncletopia_nyc_us-4",
+        "region": "usa",
         "ip": "74.91.123.17",
         "port":27045
     },
     {
         "name":"uncletopia_chi_us-1",
+        "region": "usa",
         "ip": "104.153.108.63",
         "port":27015
     },
     {
         "name":"uncletopia_chi_us-2",
+        "region": "usa",
         "ip": "104.153.108.63",
         "port":27025
     },
     {
         "name":"uncletopia_chi_us-3",
+        "region": "usa",
         "ip": "104.153.108.63",
         "port":27035
     },
     {
         "name":"uncletopia_chi_us-4",
+        "region": "usa",
         "ip": "104.153.108.63",
         "port":27045
     },
     {
         "name":"uncletopia_chi_us-5",
+        "region": "usa",
         "ip": "104.153.108.63",
         "port":27055
     },
     {
         "name":"uncletopia_chi_us-6",
+        "region": "usa",
         "ip": "104.153.108.63",
         "port":27065
     },
     {
         "name":"uncletopia_chi_us-7",
+        "region": "usa",
         "ip": "104.153.108.63",
         "port":27075
     },
     {
         "name":"uncletopia_chi_us-8",
+        "region": "usa",
         "ip": "104.153.108.63",
         "port":27085
     },
     {
         "name":"uncletopia_atl_us-1",
+        "region": "usa",
         "ip": "74.91.112.148",
         "port":27015
     },
     {
         "name":"uncletopia_atl_us-2",
+        "region": "usa",
         "ip": "74.91.112.148",
         "port":27025
     },
     {
         "name":"uncletopia_atl_us-3",
+        "region": "usa",
         "ip": "74.91.112.148",
         "port":27035
     },
     {
         "name":"uncletopia_atl_us-4",
+        "region": "usa",
         "ip": "74.91.112.148",
         "port":27045
     },
     {
         "name":"uncletopia_sea_us-1",
+        "region": "usa",
         "ip": "74.91.117.2",
         "port":27015
     },
     {
         "name":"uncletopia_sea_us-2",
+        "region": "usa",
         "ip": "74.91.117.2",
         "port":27025
     },
     {
         "name":"uncletopia_sea_us-3",
+        "region": "usa",
         "ip": "74.91.117.2",
         "port":27035
     },
     {
         "name":"uncletopia_sea_us-4",
+        "region": "usa",
         "ip": "74.91.117.2",
         "port":27045
     },
     {
         "name":"uncletopia_dal_us-1",
+        "region": "usa",
         "ip": "74.91.114.138",
         "port":27015
     },
     {
         "name":"uncletopia_dal_us-2",
+        "region": "usa",
         "ip": "74.91.114.138",
         "port":27025
     },
     {
         "name":"uncletopia_dal_us-3",
+        "region": "usa",
         "ip": "74.91.114.138",
         "port":27035
     },
     {
         "name":"uncletopia_dal_us-4",
+        "region": "usa",
         "ip": "74.91.114.138",
         "port":27045
     },
     {
         "name":"uncletopia_lax_us-1",
+        "region": "usa",
         "ip":"64.94.100.50",
         "port":27015
     },
     {
         "name":"uncletopia_lax_us-2",
+        "region": "usa",
         "ip":"64.94.100.50",
         "port":27025
     },
     {
         "name":"uncletopia_lax_us-3",
+        "region": "usa",
         "ip":"64.94.100.50",
         "port":27035
     },
     {
         "name":"uncletopia_lax_us-4",
+        "region": "usa",
         "ip":"64.94.100.50",
         "port":27045
     },
     {
         "name": "uncletopia_hk_1",
+        "region": "asia",
         "ip": "5.188.230.68",
         "port":27015
     },
     {
         "name": "uncletopia_br_1",
+        "region": "sa",
         "ip": "5.188.225.147",
         "port":27015
     },
     {
         "name": "uncletopia_syd_au-1",
+        "region": "aus",
         "ip": "103.212.224.85",
         "port":27015
     },
     {
         "name": "uncletopia_syd_au-2",
+        "region": "aus",
         "ip": "103.212.224.85",
         "port":27025
     },
     {
         "name": "uncletopia_syd_au-3",
+        "region": "aus",
         "ip": "103.212.224.85",
         "port":27035
     },
     {
         "name": "uncletopia_syd_au-4",
+        "region": "aus",
         "ip": "103.212.224.85",
         "port":27045
     }
