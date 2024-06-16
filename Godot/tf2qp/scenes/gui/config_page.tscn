@@ -8,7 +8,7 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = -150.0
+offset_right = -200.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_7s08b")
@@ -21,3 +21,25 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 40.0
+grow_horizontal = 2
+
+[node name="HSeparator" type="HSeparator" parent="Panel/VBoxContainer"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel/VBoxContainer"]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+bbcode_enabled = true
+text = "[center][b]Config[/b][/center]"
+fit_content = true

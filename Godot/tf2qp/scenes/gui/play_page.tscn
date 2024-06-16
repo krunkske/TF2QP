@@ -19,6 +19,7 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = -50.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2_tjwc4")
@@ -50,7 +51,9 @@ custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 
 [node name="OptionButton" type="OptionButton" parent="Panel/VBoxContainer"]
+custom_minimum_size = Vector2(175, 0)
 layout_mode = 2
+size_flags_horizontal = 4
 selected = 0
 item_count = 3
 popup/item_0/text = "Casual"
@@ -59,13 +62,37 @@ popup/item_1/id = 1
 popup/item_2/text = "RTD"
 popup/item_2/id = 2
 
-[node name="HSlider" type="HSlider" parent="Panel/VBoxContainer"]
+[node name="HSeparator4" type="HSeparator" parent="Panel/VBoxContainer"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Players in lobby  "
+
+[node name="SpinBox" type="SpinBox" parent="Panel/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(115, 0)
+layout_mode = 2
+min_value = 1.0
+max_value = 6.0
+value = 1.0
+suffix = "player"
+
+[node name="HSeparator3" type="HSeparator" parent="Panel/VBoxContainer"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 
 [node name="start" type="Button" parent="Panel/VBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 4
 text = "Start Search
 "
 
 [connection signal="item_selected" from="Panel/VBoxContainer/OptionButton" to="." method="_on_option_button_item_selected"]
+[connection signal="value_changed" from="Panel/VBoxContainer/HBoxContainer/SpinBox" to="." method="_on_spin_box_value_changed"]
 [connection signal="pressed" from="Panel/VBoxContainer/start" to="." method="_on_start_pressed"]

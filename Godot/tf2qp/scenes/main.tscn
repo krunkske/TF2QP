@@ -23,23 +23,29 @@ layout_mode = 1
 
 [node name="play_page" parent="gui" instance=ExtResource("2_paows")]
 layout_mode = 1
-offset_left = 150.0
-offset_right = 0.0
+offset_left = 200.0
+offset_right = 50.0
 
 [node name="config_page" parent="gui" instance=ExtResource("4_f7g25")]
 visible = false
 layout_mode = 1
-offset_left = 150.0
-offset_right = 0.0
+offset_left = 200.0
+offset_right = 50.0
 
 [node name="settings_page" parent="gui" instance=ExtResource("5_b6sub")]
 visible = false
 layout_mode = 1
-offset_left = 150.0
-offset_right = 0.0
+offset_left = 200.0
+offset_right = 50.0
 
 [node name="about_page" parent="gui" instance=ExtResource("6_0npyk")]
 visible = false
 layout_mode = 1
-offset_left = 150.0
-offset_right = 0.0
+offset_left = 200.0
+offset_right = 50.0
+
+[node name="restart_search" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
+[connection signal="timeout" from="restart_search" to="." method="_on_restart_search_timeout"]

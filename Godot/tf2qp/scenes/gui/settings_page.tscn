@@ -8,7 +8,7 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = -150.0
+offset_right = -200.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_wh47x")
@@ -57,7 +57,7 @@ layout_mode = 2
 layout_mode = 2
 text = "Players in server  "
 
-[node name="OptionButton" type="OptionButton" parent="Panel/VBoxContainer/HBoxContainer"]
+[node name="capacity_select" type="OptionButton" parent="Panel/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(110, 0)
 layout_mode = 2
 selected = 0
@@ -68,4 +68,31 @@ popup/item_1/id = 1
 popup/item_2/text = "19-24"
 popup/item_2/id = 2
 
-[connection signal="item_selected" from="Panel/VBoxContainer/HBoxContainer/OptionButton" to="." method="_on_option_button_item_selected"]
+[node name="HSeparator3" type="HSeparator" parent="Panel/VBoxContainer"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "Region  "
+
+[node name="region_select" type="OptionButton" parent="Panel/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+selected = 0
+item_count = 5
+popup/item_0/text = "Europe"
+popup/item_1/text = "United States"
+popup/item_1/id = 1
+popup/item_2/text = "Australia"
+popup/item_2/id = 2
+popup/item_3/text = "Asia"
+popup/item_3/id = 3
+popup/item_4/text = "South America"
+popup/item_4/id = 4
+
+[connection signal="item_selected" from="Panel/VBoxContainer/HBoxContainer/capacity_select" to="." method="_on_option_button_item_selected"]
+[connection signal="item_selected" from="Panel/VBoxContainer/HBoxContainer2/region_select" to="." method="_on_region_select_item_selected"]

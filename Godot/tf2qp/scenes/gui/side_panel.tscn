@@ -1,14 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://c40pmpsg5yibb"]
+[gd_scene load_steps=6 format=3 uid="uid://c40pmpsg5yibb"]
 
 [ext_resource type="Script" path="res://scripts/gui/side_panel.gd" id="1_6sitm"]
 [ext_resource type="Theme" uid="uid://ci630ouldc1rt" path="res://assets/themes/side_panel.tres" id="1_xth37"]
+[ext_resource type="Texture2D" uid="uid://du4a467ml5y7l" path="res://assets/textures/play-svgrepo-com.svg" id="3_jrug4"]
+[ext_resource type="Texture2D" uid="uid://bkwooaupmh0h" path="res://assets/textures/wrench-svgrepo-com.svg" id="4_6odrg"]
+[ext_resource type="Texture2D" uid="uid://cdb4df4kunyu3" path="res://assets/textures/gear-svgrepo-com.svg" id="4_u43cn"]
 
 [node name="side_panel" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = -475.0
+offset_right = -400.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_6sitm")
@@ -18,7 +21,6 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 25.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_xth37")
@@ -47,22 +49,28 @@ custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 text = "Play
 "
+icon = ExtResource("3_jrug4")
+icon_alignment = 2
 
 [node name="config" type="Button" parent="Panel/VBoxContainer"]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 text = "Config
 "
+icon = ExtResource("4_6odrg")
+icon_alignment = 2
 
 [node name="settings" type="Button" parent="Panel/VBoxContainer"]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 text = "Settings
 "
+icon = ExtResource("4_u43cn")
+icon_alignment = 2
 
 [node name="HSeparator2" type="HSeparator" parent="Panel/VBoxContainer"]
 self_modulate = Color(1, 1, 1, 0)
-custom_minimum_size = Vector2(0, 350)
+custom_minimum_size = Vector2(0, 325)
 layout_mode = 2
 
 [node name="about" type="Button" parent="Panel/VBoxContainer"]
@@ -70,6 +78,14 @@ custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 text = "About
 "
+
+[node name="info_lbl" type="Label" parent="Panel/VBoxContainer"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "Welcome to TF2 QuickPlay"
+horizontal_alignment = 1
+autowrap_mode = 3
 
 [connection signal="pressed" from="Panel/VBoxContainer/play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Panel/VBoxContainer/config" to="." method="_on_config_pressed"]

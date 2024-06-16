@@ -17,3 +17,12 @@ func _on_start_pressed() -> void:
 
 func _on_option_button_item_selected(index: int) -> void:
 	vars.main.change_server_type(index)
+
+
+func _on_spin_box_value_changed(value: float) -> void:
+	vars.main.players = value
+	if value > 1:
+		$Panel/VBoxContainer/HBoxContainer/SpinBox.suffix = "players"
+	else:
+		$Panel/VBoxContainer/HBoxContainer/SpinBox.suffix = "player"
+	$Panel/VBoxContainer/start.grab_focus()
