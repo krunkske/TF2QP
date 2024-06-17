@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=9 format=3 uid="uid://btf0i7w0o2el7"]
+[gd_resource type="Theme" load_steps=14 format=3 uid="uid://btf0i7w0o2el7"]
 
 [ext_resource type="SystemFont" uid="uid://b8ypobp7vc786" path="res://assets/themes/font.tres" id="1_avqhc"]
 [ext_resource type="Texture2D" uid="uid://dtnuvh6vwy2lh" path="res://assets/textures/arrow-down-short-wide-svgrepo-com.svg" id="2_1hu65"]
@@ -30,6 +30,16 @@ corner_radius_bottom_right = 6
 corner_radius_bottom_left = 6
 anti_aliasing_size = 0.5
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1q5un"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4k1aw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uykmy"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_eqvyd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lnonr"]
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bx24l"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vg55k"]
@@ -42,6 +52,11 @@ Button/styles/focus = SubResource("StyleBoxEmpty_0sg1s")
 Button/styles/hover = SubResource("StyleBoxFlat_q4s5e")
 Button/styles/normal = SubResource("StyleBoxFlat_j54d3")
 Button/styles/pressed = SubResource("StyleBoxFlat_5qb2o")
+CheckButton/styles/disabled = SubResource("StyleBoxEmpty_1q5un")
+CheckButton/styles/focus = SubResource("StyleBoxEmpty_4k1aw")
+CheckButton/styles/hover = SubResource("StyleBoxEmpty_uykmy")
+CheckButton/styles/normal = SubResource("StyleBoxEmpty_eqvyd")
+CheckButton/styles/pressed = SubResource("StyleBoxEmpty_lnonr")
 Label/font_sizes/font_size = 24
 LineEdit/font_sizes/font_size = 20
 LineEdit/styles/focus = SubResource("StyleBoxEmpty_bx24l")

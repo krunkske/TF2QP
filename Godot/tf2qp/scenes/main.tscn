@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cek3135edeb0s"]
+[gd_scene load_steps=8 format=3 uid="uid://cek3135edeb0s"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_y8316"]
 [ext_resource type="PackedScene" uid="uid://c7fkkwero8khj" path="res://scenes/gui/play_page.tscn" id="2_paows"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bbto6i521fxmk" path="res://scenes/gui/config_page.tscn" id="4_f7g25"]
 [ext_resource type="PackedScene" uid="uid://cyjbawb86hidb" path="res://scenes/gui/settings_page.tscn" id="5_b6sub"]
 [ext_resource type="PackedScene" uid="uid://sf136emu2beb" path="res://scenes/gui/about_page.tscn" id="6_0npyk"]
+[ext_resource type="PackedScene" uid="uid://cvvge2mma5vik" path="res://scenes/gui/ask_for_key_page.tscn" id="7_5a3m6"]
 
 [node name="main" type="Node"]
 script = ExtResource("1_y8316")
@@ -23,26 +24,29 @@ layout_mode = 1
 
 [node name="play_page" parent="gui" instance=ExtResource("2_paows")]
 layout_mode = 1
-offset_left = 200.0
+offset_left = 175.0
 offset_right = 50.0
 
 [node name="config_page" parent="gui" instance=ExtResource("4_f7g25")]
 visible = false
 layout_mode = 1
-offset_left = 200.0
-offset_right = 50.0
+offset_left = 175.0
+offset_right = 25.0
 
 [node name="settings_page" parent="gui" instance=ExtResource("5_b6sub")]
 visible = false
 layout_mode = 1
-offset_left = 200.0
-offset_right = 50.0
+offset_left = 175.0
+offset_right = 25.0
 
 [node name="about_page" parent="gui" instance=ExtResource("6_0npyk")]
 visible = false
 layout_mode = 1
-offset_left = 200.0
-offset_right = 50.0
+offset_left = 175.0
+offset_right = 25.0
+
+[node name="ask_for_key_page" parent="." instance=ExtResource("7_5a3m6")]
+visible = false
 
 [node name="restart_search" type="Timer" parent="."]
 wait_time = 5.0

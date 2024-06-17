@@ -8,7 +8,7 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = -150.0
+offset_right = -125.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
@@ -93,6 +93,12 @@ size_flags_horizontal = 4
 text = "Start Search
 "
 
+[node name="cancel" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Cancel"
+
 [connection signal="item_selected" from="Panel/VBoxContainer/OptionButton" to="." method="_on_option_button_item_selected"]
 [connection signal="value_changed" from="Panel/VBoxContainer/HBoxContainer/SpinBox" to="." method="_on_spin_box_value_changed"]
 [connection signal="pressed" from="Panel/VBoxContainer/start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/cancel" to="." method="_on_cancel_pressed"]

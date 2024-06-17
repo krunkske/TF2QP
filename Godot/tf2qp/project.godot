@@ -29,10 +29,6 @@ window/size/viewport_height=700
 
 project/assembly_name="TF2QP"
 
-[gui]
-
-theme/custom_font="res://assets/themes/font.tres"
-
 [rendering]
 
 renderer/rendering_method="gl_compatibility"

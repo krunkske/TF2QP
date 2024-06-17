@@ -8,7 +8,7 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = -200.0
+offset_right = -125.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_7s08b")
@@ -42,4 +42,11 @@ custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
 bbcode_enabled = true
 text = "[center][b]Config[/b][/center]"
+fit_content = true
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Panel/VBoxContainer"]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+bbcode_enabled = true
+text = "[center][b]TBA[/b][/center]"
 fit_content = true

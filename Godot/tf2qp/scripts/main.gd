@@ -13,12 +13,14 @@ var capacity = [11, 18]
 enum region {eu, usa, sa, asia, aus} #used as reference
 var current_region = "eu"
 var server_type = "casual_servers"
+var auto_connect_to_server = true
 
 func _ready() -> void:
 	DirAccess.make_dir_absolute("user://config/")
 	if not DirAccess.dir_exists_absolute("user://config/user_config/"):
 		DirAccess.make_dir_absolute("user://config/user_config/")
-		save_settings()
+		if not FileAccess.file_exists("user://config/user_config/settings.json"):
+			$ask_for_key_page.show()
 	else:
 		load_settings()
 	get_config_from_url(gh_url, "casual_servers.json")
@@ -51,16 +53,30 @@ func _on_config_request_completed(result, response_code, headers, body, file_nam
 
 func connect_to_server(ip: String, port: int, Name: String):
 	var url = "steam://connect/" + str(ip) + ":" + str(port)
-	if players > 1:
+	if players > 1 or not auto_connect_to_server:
 		DisplayServer.clipboard_set("connect" + str(ip) + ":" + str(port))
 		print("COOMAND COPIED TO CLIPBOARD")
-	print("Connecting you to " + str(Name))
-	$gui/side_panel/Panel/VBoxContainer/info_lbl.text = "Found server! Connecting..."
-	printerr("CONNECT DISABLED. THIS SHOULD NOT BE IN THE RELEASE BUILD. PLEASE CONTACT THE DEVELOPERS")
-	#OS.shell_open(url)
+		$gui/side_panel/Panel/VBoxContainer2/info_lbl.text = "Found server! Command copied to clipboard"
+	else:
+		$gui/side_panel/Panel/VBoxContainer2/info_lbl.text = "Found server!"
+	
+	#printerr("CONNECT DISABLED. THIS SHOULD NOT BE IN THE RELEASE BUILD. PLEASE CONTACT THE DEVELOPERS")
+	if auto_connect_to_server:
+		OS.shell_open(url)
+		print("Connecting you to " + str(Name))
+
+func cancel_search():
+	if searching:
+		$restart_search.stop()
+		stop = true
+		searching = false
+		print("Stopping search")
+		$gui/side_panel/Panel/VBoxContainer2/info_lbl.text = "Stopping search"
+		$gui/play_page/Panel/VBoxContainer/start.disabled = false
+		$gui/play_page/Panel/VBoxContainer/cancel.disabled = true
 
 func start_search():
-	$gui/side_panel/Panel/VBoxContainer/info_lbl.text = "Searching..."
+	$gui/side_panel/Panel/VBoxContainer2/info_lbl.text = "Searching..."
 	var i = 0
 	var Capacity = [capacity[0], capacity[1]]
 	while true:
@@ -73,21 +89,23 @@ func start_search():
 				if not stop:
 					print("FOUND MATCH: " + str(sv['players']) + " " + str(Capacity))
 					connect_to_server(sv['ip'], sv['port'], sv['name'])
-					#app.start_search_button.configure(state=NORMAL)
-					#app.cancel_button.configure(state=DISABLED)
+					$gui/play_page/Panel/VBoxContainer/start.disabled = false
+					$gui/play_page/Panel/VBoxContainer/cancel.disabled = true
 					searching = false
 					return true
 				else:
 					stop = false
 					return true
 			else:
-				pass
+				if stop:
+					stop = false
+					return true
 				#print("Capacity was not between " + str(Capacity[0]) + " and " + str(Capacity[1]) + ", " + str(sv['players']) + " for " + str(sv['name']))
 		
 		i += 1
 		if Capacity[0] < 0 and Capacity[1] > 24:
 			print("could not find a match. retrying in 5 seconds")
-			$gui/side_panel/Panel/VBoxContainer/info_lbl.text = "could not find a match. retrying in 5 seconds"
+			$gui/side_panel/Panel/VBoxContainer2/info_lbl.text = "could not find a match. retrying in 5 seconds"
 			if not stop:
 				$restart_search.start()
 			else:
@@ -97,7 +115,7 @@ func start_search():
 func get_server_data():
 	requests_completed = 0
 	searching = true
-	$gui/side_panel/Panel/VBoxContainer/info_lbl.text = "Getting server data..."
+	$gui/side_panel/Panel/VBoxContainer2/info_lbl.text = "Getting server data..."
 	content = load_json_file("user://config/" + str(server_type) + ".json")
 	needed_results = len(content)
 	for server_info in content:
@@ -124,6 +142,10 @@ func _on_server_request_completed(result, response_code, headers, body, sender):
 			available_servers.append(server_info)
 		else:
 			print("Not enough spots.")
+	elif response_code == 403 or response_code == 401:
+		print("No api key was given")
+		cancel_search()
+		$ask_for_key_page.show()
 	else:
 		print("response code error, code " + str(response_code))
 		print(result)
@@ -132,7 +154,7 @@ func _on_server_request_completed(result, response_code, headers, body, sender):
 
 func save_settings():
 	var file = FileAccess.open("user://config/user_config/settings.json", FileAccess.WRITE)
-	var save = {"capacity":capacity, "region": current_region}
+	var save = {"capacity":capacity, "region": current_region, "auto_connect": auto_connect_to_server, "key": vars.API_KEY}
 	file.store_string(str(save))
 	print("saved settings")
 
@@ -140,6 +162,10 @@ func load_settings():
 	var data = load_json_file("user://config/user_config/settings.json")
 	capacity = data["capacity"]
 	current_region = data["region"]
+	auto_connect_to_server = data["auto_connect"]
+	vars.API_KEY = data["key"]
+	
+	$gui/settings_page/Panel/VBoxContainer/auto_connect_toggle.set_pressed_no_signal(auto_connect_to_server)
 	
 	if capacity[0] == 0:
 		$gui/settings_page/Panel/VBoxContainer/HBoxContainer/capacity_select.select(0)
@@ -192,6 +218,8 @@ func change_server_type(idx: int):
 	elif idx == 2:
 		server_type = "rtd"
 
-
 func _on_restart_search_timeout() -> void:
 	get_server_data()
+
+func show_key_menu():
+	$ask_for_key_page.show()

@@ -38,3 +38,19 @@ func _on_region_select_item_selected(index: int) -> void:
 		
 		print("Region is now " + str(vars.main.current_region))
 		vars.main.save_settings()
+
+
+func _on_del_key_pressed() -> void:
+	vars.API_KEY = ""
+	vars.main.show_key_menu()
+
+func _on_del_settings_pressed() -> void:
+	vars.main.capacity = [12, 18]
+	vars.main.current_region = "eu"
+	vars.main.save_settings()
+	vars.main.load_settings()
+
+
+func _on_auto_connect_toggle_toggled(toggled_on: bool) -> void:
+	vars.main.auto_connect_to_server = toggled_on
+	vars.main.save_settings()

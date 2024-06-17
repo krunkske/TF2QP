@@ -1,6 +1,9 @@
-[gd_resource type="SystemFont" format=3 uid="uid://b8ypobp7vc786"]
+[gd_resource type="SystemFont" load_steps=2 format=3 uid="uid://b8ypobp7vc786"]
+
+[sub_resource type="SystemFont" id="SystemFont_evb8o"]
 
 [resource]
+fallbacks = Array[Font]([SubResource("SystemFont_evb8o")])
 font_names = PackedStringArray("Open Sans")
 font_weight = 600
 hinting = 2

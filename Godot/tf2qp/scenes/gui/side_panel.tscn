@@ -11,7 +11,7 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = -400.0
+offset_right = -425.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_6sitm")
@@ -27,11 +27,10 @@ theme = ExtResource("1_xth37")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
 layout_mode = 1
-anchors_preset = 15
+anchors_preset = 10
 anchor_right = 1.0
-anchor_bottom = 1.0
+offset_bottom = 341.0
 grow_horizontal = 2
-grow_vertical = 2
 
 [node name="HSeparator" type="HSeparator" parent="Panel/VBoxContainer"]
 self_modulate = Color(1, 1, 1, 0)
@@ -68,18 +67,23 @@ text = "Settings
 icon = ExtResource("4_u43cn")
 icon_alignment = 2
 
-[node name="HSeparator2" type="HSeparator" parent="Panel/VBoxContainer"]
-self_modulate = Color(1, 1, 1, 0)
-custom_minimum_size = Vector2(0, 325)
-layout_mode = 2
+[node name="VBoxContainer2" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -117.0
+grow_horizontal = 2
+grow_vertical = 0
 
-[node name="about" type="Button" parent="Panel/VBoxContainer"]
+[node name="about" type="Button" parent="Panel/VBoxContainer2"]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 text = "About
 "
 
-[node name="info_lbl" type="Label" parent="Panel/VBoxContainer"]
+[node name="info_lbl" type="Label" parent="Panel/VBoxContainer2"]
 custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 16
@@ -87,7 +91,12 @@ text = "Welcome to TF2 QuickPlay"
 horizontal_alignment = 1
 autowrap_mode = 3
 
+[node name="HSeparator2" type="HSeparator" parent="Panel/VBoxContainer2"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
 [connection signal="pressed" from="Panel/VBoxContainer/play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Panel/VBoxContainer/config" to="." method="_on_config_pressed"]
 [connection signal="pressed" from="Panel/VBoxContainer/settings" to="." method="_on_settings_pressed"]
-[connection signal="pressed" from="Panel/VBoxContainer/about" to="." method="_on_about_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer2/about" to="." method="_on_about_pressed"]

@@ -1,14 +1,35 @@
-[gd_scene load_steps=3 format=3 uid="uid://cyjbawb86hidb"]
+[gd_scene load_steps=6 format=3 uid="uid://cyjbawb86hidb"]
 
 [ext_resource type="Script" path="res://scripts/gui/settings_page.gd" id="1_qa72b"]
 [ext_resource type="Theme" uid="uid://btf0i7w0o2el7" path="res://assets/themes/dark_theme.tres" id="1_wh47x"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_61vuy"]
+bg_color = Color(0.870524, 0, 0.200681, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t1kja"]
+bg_color = Color(0.870524, 0, 0.200681, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t1bn1"]
+bg_color = Color(0.870524, 0, 0.200681, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
 
 [node name="settings_page" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = -200.0
+offset_right = -125.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_wh47x")
@@ -94,5 +115,52 @@ popup/item_3/id = 3
 popup/item_4/text = "South America"
 popup/item_4/id = 4
 
+[node name="auto_connect_toggle" type="CheckButton" parent="Panel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Auto connect to server "
+
+[node name="HSeparator4" type="HSeparator" parent="Panel/VBoxContainer"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Panel/VBoxContainer"]
+layout_mode = 2
+bbcode_enabled = true
+text = "[center][b]Danger zone[/b][/center]"
+fit_content = true
+
+[node name="HSeparator5" type="HSeparator" parent="Panel/VBoxContainer"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="del_key" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/hover = SubResource("StyleBoxFlat_61vuy")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_t1kja")
+theme_override_styles/normal = SubResource("StyleBoxFlat_t1bn1")
+text = "Reset Key"
+
+[node name="HSeparator6" type="HSeparator" parent="Panel/VBoxContainer"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="del_settings" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/hover = SubResource("StyleBoxFlat_61vuy")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_t1kja")
+theme_override_styles/normal = SubResource("StyleBoxFlat_t1bn1")
+text = "Reset Settings
+"
+
 [connection signal="item_selected" from="Panel/VBoxContainer/HBoxContainer/capacity_select" to="." method="_on_option_button_item_selected"]
 [connection signal="item_selected" from="Panel/VBoxContainer/HBoxContainer2/region_select" to="." method="_on_region_select_item_selected"]
+[connection signal="toggled" from="Panel/VBoxContainer/auto_connect_toggle" to="." method="_on_auto_connect_toggle_toggled"]
+[connection signal="pressed" from="Panel/VBoxContainer/del_key" to="." method="_on_del_key_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/del_settings" to="." method="_on_del_settings_pressed"]
