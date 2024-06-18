@@ -40,8 +40,13 @@ layout_mode = 2
 [node name="name" type="RichTextLabel" parent="Panel/VBoxContainer"]
 layout_mode = 2
 bbcode_enabled = true
-text = "[center][b]TF2QP[/b][/center]"
+text = "[center][img=<50>x<t>]res://assets/textures/tf2qp_temp_logo.svg[/img][b]  TF2QP[/b][/center]"
 fit_content = true
+
+[node name="HSeparator2" type="HSeparator" parent="Panel/VBoxContainer"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
 
 [node name="play" type="Button" parent="Panel/VBoxContainer"]
 custom_minimum_size = Vector2(0, 50)

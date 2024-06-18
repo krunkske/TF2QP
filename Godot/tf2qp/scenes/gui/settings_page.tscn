@@ -119,6 +119,7 @@ popup/item_4/id = 4
 custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
 size_flags_horizontal = 4
+button_pressed = true
 text = "Auto connect to server "
 
 [node name="HSeparator4" type="HSeparator" parent="Panel/VBoxContainer"]

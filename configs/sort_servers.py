@@ -24,6 +24,6 @@ for i in range(len(unsorted_list_ip)):
     
     servers.append({"name": name, "region": region, "ip": ip, "port": int(port)})
     
-with open('configs/casual_servers.json', 'a') as f:
+with open('configs/casual_servers.json', 'w') as f:
     f.write(json.dumps(servers, indent=4))
     
